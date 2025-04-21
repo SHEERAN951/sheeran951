@@ -1,0 +1,1632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swim With Coach Marvin Ug. </title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #000080;
+            --secondary-color: "black";
+            --accent-color: "red";
+            --light-color:"blue";
+            --dark-color: #333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #0B0C10;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        
+        .logo-text h1 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .logo-text p {
+            color: var(--dark-color);
+            font-size: 0.9rem;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.9rem;
+            cursor: pointer;
+        }
+        
+        /* Marquee Banner */
+        .marquee {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 0;
+            overflow: hidden;
+        }
+        
+        .marquee-content {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 20s linear infinite;
+        }
+        
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1551726670-977bb14850c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #e68a00;
+        }
+        
+        /* Process Section */
+        .process {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        
+        .step {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 20px;
+            margin: 10px;
+            background-color: var(--light-color);
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        
+        .step:hover {
+            transform: translateY(-10px);
+        }
+        
+        .step-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .step h3 {
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+        
+        /* Programs Section */
+        .programs {
+            padding: 60px 0;
+            background-color: var(--light-color);
+        }
+        
+        .program-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .program-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            transition: transform 0.3s;
+        }
+        
+        .program-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .program-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .program-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .program-card:hover .program-img img {
+            transform: scale(1.1);
+        }
+        
+        .program-content {
+            padding: 20px;
+        }
+        
+        .program-content h3 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+        
+        .program-content p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        /* Fees Section */
+        .fees {
+            padding: 60px 0;
+            background-color: #ede8f5;
+        }
+        
+        .fees-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .fees-table th, .fees-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .fees-table th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .fees-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .fees-table tr:hover {
+            background-color: #e9e9e9;
+        }
+        
+        /* Application Form */
+        .application {
+            padding: 60px 0;
+            background-color: var(--light-color);
+        }
+        
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+        
+        .form-group textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        
+        .error-message {
+            color: #dc3545;
+            font-size: 0.8rem;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        .form-group.error input,
+        .form-group.error select,
+        .form-group.error textarea {
+            border-color: #dc3545;
+        }
+        
+        .form-group.error .error-message {
+            display: block;
+        }
+        
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            position: relative;
+        }
+        
+        .submit-btn:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .submit-btn.loading::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            border: 4px solid transparent;
+            border-top-color: #ffffff;
+            border-radius: 50%;
+            animation: button-loading-spinner 1s ease infinite;
+        }
+        
+        @keyframes button-loading-spinner {
+            from {
+                transform: rotate(0turn);
+            }
+            to {
+                transform: rotate(1turn);
+            }
+        }
+        
+        /* Success Message */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            background-color: #d4edda;
+            color: #155724;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        
+        /* Status Tracker Styles */
+        #statusTracker {
+            background: white;
+            padding: 40px 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 40px auto;
+            text-align: center;
+            display: none;
+        }
+
+        .status-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 0;
+            position: relative;
+        }
+
+        .status-step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+
+        .status-step .step-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #ddd;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            font-weight: bold;
+            position: relative;
+            z-index: 2;
+        }
+
+        .status-step::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            right: -50%;
+            height: 3px;
+            background: #ddd;
+            z-index: 1;
+        }
+
+        .status-step:last-child::after {
+            display: none;
+        }
+
+        .active-step .step-icon {
+            background: #00a8e8;
+            animation: pulse 2s infinite;
+        }
+
+        .completed-step .step-icon {
+            background: #4CAF50;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 168, 232, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(0, 168, 232, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 168, 232, 0); }
+        }
+
+        #statusDetails {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f5f5f5;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        #paymentInstructions {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e8f5e9;
+            border-radius: 5px;
+            display: none;
+        }
+
+        #whatsappConfirmBtn {
+            background-color: #25D366;
+            margin-top: 15px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .gallery-item {
+            height: 250px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        
+        .lightbox-content img {
+            width: 100%;
+            height: auto;
+            max-height: 80vh;
+            object-fit: contain;
+        }
+        
+        .close-lightbox {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        /* Reviews Section */
+        .reviews {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .review-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .review-card {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .reviewer-img {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-right: 15px;
+        }
+        
+        .reviewer-info h4 {
+            margin-bottom: 5px;
+            color: var(--secondary-color);
+        }
+        
+        .stars {
+            color: var(--accent-color);
+        }
+        
+        .review-content p {
+            font-style: italic;
+            color: #555;
+        }
+        
+        /* Feedback Form */
+        .feedback-form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #f5f5f5;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        
+        .feedback-form-container h3 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+        
+        .star-rating {
+            display: flex;
+            justify-content: center;
+            margin: 15px 0;
+        }
+        
+        .star-rating input {
+            display: none;
+        }
+        
+        .star-rating label {
+            font-size: 1.5rem;
+            color: #ccc;
+            cursor: pointer;
+            transition: color 0.2s;
+            margin: 0 5px;
+        }
+        
+        .star-rating input:checked ~ label,
+        .star-rating label:hover,
+        .star-rating label:hover ~ label {
+            color: var(--accent-color);
+        }
+        
+        .star-rating input:checked + label {
+            color: var(--accent-color);
+        }
+        
+        .feedback-success {
+            text-align: center;
+            padding: 20px;
+            background-color: #d4edda;
+            color: #155724;
+            border-radius: 5px;
+            margin-top: 20px;
+            display: none;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 60px 0;
+            background-color: var(--light-color);
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        
+        .contact-card {
+            flex: 1;
+            min-width: 250px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            text-align: center;
+        }
+        
+        .contact-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .contact-card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+        
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 100;
+            transition: transform 0.1s;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-column h3 {
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--accent-color);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin-bottom: 15px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .nav-menu {
+                display: none;
+                width: 100%;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .process-steps {
+                flex-direction: column;
+            }
+            
+            .step {
+                margin-bottom: 20px;
+            }
+            
+            .form-container {
+                padding: 20px;
+            }
+            
+            .status-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .status-step {
+                margin-bottom: 30px;
+                width: 100%;
+            }
+            
+            .status-step::after {
+                display: none;
+            }
+            
+            /* Add more space between sections on mobile */
+            section {
+                padding: 40px 0;
+            }
+            
+            .hero {
+                height: 400px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preload" href="https://images.unsplash.com/photo-1709144357236-6eb5ffc98543?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" as="image">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="https://images.unsplash.com/photo-1669185694564-2da287319e13?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Coach Marvin Swimming Logo">
+                <div class="logo-text">
+                    <h1>SWIM WITH COACH MARVIN</h1>
+                    <p>Kampala, Uganda</p>
+                </div>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav class="nav-menu" aria-label="Main navigation">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#programs">Programs</a></li>
+                    <li><a href="#apply">Apply Now</a></li>
+                    <li><a href="#fees">Fees</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Marquee Banner -->
+    <div class="marquee">
+        <div class="container">
+            <div class="marquee-content">
+                🏊‍♂️ Register Today! → Fill Application → Get Approved → Pay Fees → Receive Receipt → Start Swimming! 🏊‍♀️
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h2>It's Never Too Late or Too Early to Swim</h2>
+                <p>Join Coach Marvin and learn swimming in a safe and fun environment. Programs available for all ages and skill levels.</p>
+                <a href="#apply" class="btn">Apply Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Simple Process</h2>
+                <p>5 easy steps to get you swimming with Coach Marvin</p>
+            </div>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-edit"></i>
+                    </div>
+                    <h3>1. Apply Online</h3>
+                    <p>Fill out our simple application form with your details</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>2. Get Approved</h3>
+                    <p>I will review your application within 48 hours</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>3. Pay Fees</h3>
+                    <p>Pay via Mobile Money with simple instructions</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-receipt"></i>
+                    </div>
+                    <h3>4. Get Receipt</h3>
+                    <p>Receive your payment confirmation and e-receipt</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-swimming-pool"></i>
+                    </div>
+                    <h3>5. Start Swimming!</h3>
+                    <p>Begin your swimming journey with expert coaching</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="programs" id="programs">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Swimming Programs</h2>
+                <p>Comprehensive training for all ages and skill levels</p>
+            </div>
+            <div class="program-cards">
+                <div class="program-card">
+                    <div class="program-img">
+                        <img src="https://images.unsplash.com/photo-1574744918163-6cef6f4a31b0?a=1&b=1&s=612x612&w=0&k=20&c=NoHC8pLAp4nCex7P8Iea9ztkKgWR5WmlcGWKkf6SRKo=?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Kids swimming lessons with Coach Marvin">
+                    </div>
+                    <div class="program-content">
+                        <h3>Kids Swimming (Ages 4-16)</h3>
+                        <p>Fun and safe swimming lessons for children focusing on water safety, basic strokes, and confidence-building in the water. Our kid-friendly approach makes learning enjoyable.</p>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="program-img">
+                        <img src="https://images.unsplash.com/photo-1438029071396-1e831a7fa6d8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3dpbW1pbmd8ZW58MHx8MHx8fDA%3D?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Adult swimming lessons">
+                    </div>
+                    <div class="program-content">
+                        <h3>Adult Beginner Classes</h3>
+                        <p>Overcome your fear of water or learn proper techniques in a supportive environment. We specialize in helping adults become confident swimmers at their own pace.</p>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="program-img">
+                        <img src="https://images.unsplash.com/photo-1612107446063-362ff2746152?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Private swimming coaching">
+                    </div>
+                    <div class="program-content">
+                        <h3>Private Coaching</h3>
+                        <p>Personalized 1-on-1 sessions tailored to your specific goals, whether you're preparing for competition or want focused attention to improve your technique.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fees Section -->
+    <section class="fees" id="fees">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Fee Structure</h2>
+                <p>Affordable swimming programs in Uganda Shillings (UGX)</p>
+                <p>Note: Sessions last 3 to 5 hours depending on the program</p>
+            </div>
+            <table class="fees-table">
+                <thead> 
+                    <tr>
+                        <th>Program</th>
+                        <th>Duration</th>
+                        <th>Fee (UGX)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Kids Beginner Course</td>
+                        <td>8 sessions</td>
+                        <td>400,000</td>
+                    </tr>
+                    <tr>
+                        <td>Adults Beginner Course</td>
+                        <td>8 sessions</td>
+                        <td>500,000</td>
+                    </tr>
+                    <tr>
+                        <td>Private Coaching (1-on-1)</td>
+                        <td>Per session</td>
+                        <td>100,000/session</td>
+                    </tr>
+                    <tr>
+                        <td>Weekend Family Swim Pass</td>
+                        <td>Half day</td>
+                        <td>200,000/family</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Application Form -->
+    <section class="application" id="apply">
+        <div class="container">
+            <div class="section-title">
+                <h2>Apply Now</h2>
+                <p>Join our swimming academy - fill out the form below</p>
+            </div>
+            <div class="form-container">
+                <form id="applicationForm" action="https://formspree.io/f/mdkepeog" method="POST">
+                    <input type="hidden" name="_subject" value="New Swimming Academy Application">
+                    <input type="hidden" name="_next" value="?status=submitted#statusTracker">
+                    <div class="form-group">
+                        <label for="fullName">Full Name *</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                        <div class="error-message">Please enter your full name</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Age *</label>
+                        <input type="number" id="age" name="age" min="4" max="99" required>
+                        <div class="error-message">Please enter a valid age (4-99)</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">Gender *</label>
+                        <select id="gender" name="gender" required>
+                            <option value="">Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <div class="error-message">Please select your gender</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+                        <div class="error-message">Please enter a valid 10-digit phone number</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email">
+                        <div class="error-message">Please enter a valid email address</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="program">Program *</label>
+                        <select id="program" name="program" required>
+                            <option value="">Select Program</option>
+                            <option value="kids">Kids Beginner Course (400,000 UGX)</option>
+                            <option value="adults">Adults Beginner Course (500,000 UGX)</option>
+                            <option value="private">Private Coaching (100,000 UGX/session)</option>
+                        </select>
+                        <div class="error-message">Please select a program</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="medical">Medical Conditions (if any)</label>
+                        <textarea id="medical" name="medical" placeholder="Please disclose any medical conditions we should be aware of"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn" id="submitButton">Submit Application</button>
+                </form>
+                <div class="success-message" id="successMessage">
+                    <h3>Thank you for your application!</h3>
+                    <p>We have received your application and will review it within 48 hours. You will receive an approval email with payment instructions if accepted.</p>
+                    <p><i class="fas fa-envelope"></i> Please check your email (and spam folder) for our response.</p>
+                </div>
+                
+                <!-- Status Tracker Section -->
+                <div id="statusTracker">
+                    <h2>Application Status</h2>
+                    <div class="status-container">
+                        <div class="status-step" id="stepSubmitted">
+                            <div class="step-icon">1</div>
+                            <p>Submitted</p>
+                        </div>
+                        <div class="status-step" id="stepApproved">
+                            <div class="step-icon">2</div>
+                            <p>Approved</p>
+                        </div>
+                        <div class="status-step" id="stepPayment">
+                            <div class="step-icon">3</div>
+                            <p>Payment</p>
+                        </div>
+                        <div class="status-step" id="stepConfirmed">
+                            <div class="step-icon">4</div>
+                            <p>Confirmed</p>
+                        </div>
+                    </div>
+                    
+                    <div id="statusDetails">
+                        <p id="currentStatusText">Your application is being reviewed...</p>
+                        <div id="paymentInstructions">
+                            <h3>Payment Instructions</h3>
+                            <p>Amount: <span id="paymentAmount"></span> UGX</p>
+                            <p>Mobile Money: 0758625657 (Coach Marvin)</p>
+                            <p>Reference: Your Full Name</p>
+                            <a href="#" id="whatsappConfirmBtn" class="btn">
+                                <i class="fab fa-whatsapp"></i> Confirm via WhatsApp
+                            </a>
+                            <p>Or click the confirmation link in your approval email after paying</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Gallery</h2>
+                <p>Welcome to the water world</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox('https://images.pexels.com/photos/1450360/pexels-photo-1450360.jpeg?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                    <img src="https://images.unsplash.com/photo-1622979857654-9363bb0a1243?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Swimming pool facility">
+                </div>
+                <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1543351611-58f69d7c1781?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                    <img src="https://images.unsplash.com/photo-1600965962361-9035dbfd1c50?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Swimming lessons in progress">
+                </div>
+                <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1551524559-8af4e6624178?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                    <img src="https://images.unsplash.com/photo-1530725634868-99411c81945c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Kids enjoying swimming lessons">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <div class="section-title">
+                <h2>Student Feedback</h2>
+                <p>What our students say about their experience</p>
+            </div>
+            
+            <div class="review-cards">
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-img">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="reviewer-info">
+                            <h4>Sarah K.</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>"Coach Marvin transformed my daughter from being afraid of water to swimming confidently. His patience with kids is amazing!"</p>
+                    </div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-img">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="reviewer-info">
+                            <h4>James M.</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>"As an adult learner, I was nervous, but Coach Marvin's approach made me comfortable. I can now swim laps confidently."</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Feedback Form -->
+            <div class="feedback-form-container">
+                <h3>Share Your Experience</h3>
+                <form id="feedbackForm" action="https://formspree.io/f/mdkepeog" method="POST">
+                    <input type="hidden" name="_subject" value="New Feedback Submission">
+                    <div class="form-group">
+                        <label for="reviewerName">Your Name *</label>
+                        <input type="text" id="reviewerName" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reviewerEmail">Email (optional)</label>
+                        <input type="email" id="reviewerEmail" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label>Rating *</label>
+                        <div class="star-rating">
+                            <input type="radio" id="star5" name="rating" value="5" required>
+                            <label for="star5"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star4" name="rating" value="4">
+                            <label for="star4"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star3" name="rating" value="3">
+                            <label for="star3"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star2" name="rating" value="2">
+                            <label for="star2"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star1" name="rating" value="1">
+                            <label for="star1"><i class="fas fa-star"></i></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="reviewText">Your Feedback *</label>
+                        <textarea id="reviewText" name="feedback" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit Feedback</button>
+                </form>
+                <div class="feedback-success">
+                    <p>Thank you for your feedback! We appreciate you taking the time to share your experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="close-lightbox">&times;</span>
+        <div class="lightbox-content">
+            <img id="lightboxImage" src="" alt="">
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Me</h2>
+                <p>Get in touch with Coach Marvin</p>
+            </div>
+            <div class="contact-info">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Phone</h3>
+                    <p>+256758625657</p>   
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p>coachmarvin256@gmail.com</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Location</h3>
+                    <p>Swimming Pool Complex</p>
+                    <p>Kampala, Uganda</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <p>With Coach Marvin you can go from beginner to confident swimmer while improving your health, fitness, and physique. Our personalized approach ensures you'll never regret joining our program.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#programs">Programs</a></li>
+                        <li><a href="#fees">Fees</a></li>
+                        <li><a href="#apply">Apply Now</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#reviews">Reviews</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Information</h3>
+                    <ul>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect With Me</h3>
+                    <div class="social-links">
+                        <a href="https://wa.me/256758625657" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Swim With Coach Marvin. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/256758625657?text=Hello%20Coach%20Marvin,%20I%20saw%20your%20website%20and%20want%20to%20know%20more%20about%20swimming%20lessons" class="whatsapp-float" aria-label="Chat on WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+
+        // Form Validation and Submission
+        document.getElementById('applicationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validate form
+            let isValid = true;
+            const form = e.target;
+            
+            // Check required fields
+            const requiredFields = form.querySelectorAll('[required]');
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    field.closest('.form-group').classList.add('error');
+                    isValid = false;
+                } else {
+                    field.closest('.form-group').classList.remove('error');
+                }
+            });
+            
+            // Validate email if provided
+            const emailField = form.querySelector('#email');
+            if (emailField.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailField.value)) {
+                emailField.closest('.form-group').classList.add('error');
+                isValid = false;
+            }
+            
+            // Validate phone number
+            const phoneField = form.querySelector('#phone');
+            if (!/^\d{10}$/.test(phoneField.value)) {
+                phoneField.closest('.form-group').classList.add('error');
+                isValid = false;
+            }
+            
+            if (!isValid) return;
+            
+            // Show loading state
+            const submitButton = form.querySelector('#submitButton');
+            submitButton.disabled = true;
+            submitButton.classList.add('loading');
+            
+            // Submit form to Formspree
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Hide form and show success message
+                    form.style.display = 'none';
+                    document.getElementById('successMessage').style.display = 'block';
+                    
+                    // Show status tracker
+                    document.getElementById('statusTracker').style.display = 'block';
+                    
+                    // Mark first step as completed
+                    document.getElementById('stepSubmitted').classList.add('completed-step');
+                    
+                    // Store application data in localStorage
+                    const formData = {
+                        name: document.getElementById('fullName').value,
+                        phone: document.getElementById('phone').value,
+                        program: document.getElementById('program').value,
+                        email: document.getElementById('email').value
+                    };
+                    localStorage.setItem('swimApplication', JSON.stringify(formData));
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            })
+            .catch(error => {
+                alert('There was a problem submitting your form. Please try again or contact us directly.');
+                console.error('Form submission error:', error);
+            })
+            .finally(() => {
+                // Reset button state
+                submitButton.disabled = false;
+                submitButton.classList.remove('loading');
+            });
+        });
+
+        // Enhanced Status Tracker Functionality
+        function initializeStatusTracker() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const status = urlParams.get('status');
+            const paymentConfirmed = urlParams.get('payment-confirmed');
+            const storedApp = JSON.parse(localStorage.getItem('swimApplication')) || {};
+            
+            // Show tracker if application exists in storage or URL params
+            if (storedApp.phone || status || paymentConfirmed) {
+                document.getElementById('statusTracker').style.display = 'block';
+                
+                // Mark submitted step
+                document.getElementById('stepSubmitted').classList.add('completed-step');
+                document.getElementById('currentStatusText').textContent = 
+                    `Hello ${storedApp.name || 'Applicant'}, your application is being processed.`;
+                
+                // Check approval status
+                if (status === 'approved' || paymentConfirmed) {
+                    document.getElementById('stepApproved').classList.add('completed-step');
+                    document.getElementById('stepPayment').classList.add('active-step');
+                    document.getElementById('currentStatusText').textContent = 
+                        `Dear ${storedApp.name || 'Applicant'}, your application has been APPROVED!`;
+                    
+                    // Set payment amount based on program
+                    const fees = {
+                        'kids': '400,000',
+                        'adults': '500,000',
+                        'private': '100,000'
+                    };
+                    document.getElementById('paymentAmount').textContent = 
+                        fees[storedApp.program] || '500,000';
+                    
+                    // Show payment instructions
+                    document.getElementById('paymentInstructions').style.display = 'block';
+                }
+                
+                // Check payment confirmation
+                if (paymentConfirmed) {
+                    confirmPayment(storedApp);
+                }
+            }
+        }
+
+        function confirmPayment(storedApp) {
+            document.getElementById('stepPayment').classList.add('completed-step');
+            document.getElementById('stepConfirmed').classList.add('active-step');
+            document.getElementById('paymentInstructions').style.display = 'none';
+            document.getElementById('currentStatusText').textContent = 
+                `Payment confirmed! Thank you ${storedApp.name || 'Client'}. Your registration is complete.`;
+            
+            // Send confirmation to Formspree
+            fetch("https://formspree.io/f/mdkepeog", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                },
+                body: JSON.stringify({
+                    _subject: `Payment Confirmed - ${storedApp.name || 'Client'}`,
+                    name: storedApp.name,
+                    phone: storedApp.phone,
+                    program: storedApp.program,
+                    amount: document.getElementById('paymentAmount').textContent,
+                    status: "PAID",
+                    type: "payment-confirmation"
+                })
+            });
+        }
+
+        // WhatsApp confirmation button
+        document.getElementById('whatsappConfirmBtn')?.addEventListener('click', function(e) {
+            e.preventDefault();
+            const storedApp = JSON.parse(localStorage.getItem('swimApplication')) || {};
+            const amount = document.getElementById('paymentAmount').textContent;
+            const whatsappUrl = `https://wa.me/256758625657?text=Hello%20Coach%20Marvin,%20I%20have%20paid%20${amount}%20UGX%20for%20${storedApp.program}%20program.%0A%0AName:%20${encodeURIComponent(storedApp.name)}%0APhone:%20${storedApp.phone}%0ATransaction%20ID:`;
+            window.open(whatsappUrl, '_blank');
+        });
+
+        // Payment verification from email link
+        function checkPaymentConfirmation() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const paymentConfirmed = urlParams.get('payment-confirmed');
+            const storedApp = JSON.parse(localStorage.getItem('swimApplication')) || {};
+            
+            if (paymentConfirmed && storedApp.phone) {
+                confirmPayment(storedApp);
+            }
+        }
+
+        // Lightbox functionality
+        function openLightbox(imageSrc) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightboxImage');
+            lightboxImg.src = imageSrc;
+            lightbox.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Feedback Form Submission
+        document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const form = e.target;
+            const submitButton = form.querySelector('button[type="submit"]');
+            const successMessage = document.querySelector('.feedback-success');
+            
+            // Validate required fields
+            if (!form.querySelector('#reviewerName').value.trim() || 
+                !form.querySelector('input[name="rating"]:checked') || 
+                !form.querySelector('#reviewText').value.trim()) {
+                alert('Please fill all required fields');
+                return;
+            }
+            
+            // Show loading state
+            submitButton.disabled = true;
+            submitButton.classList.add('loading');
+            
+            // Submit form to Formspree
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Show success message
+                    form.style.display = 'none';
+                    successMessage.style.display = 'block';
+                    form.reset();
+                } else {
+                    throw new Error('Feedback submission failed');
+                }
+            })
+            .catch(error => {
+                alert('There was a problem submitting your feedback. Please try again later.');
+                console.error('Feedback submission error:', error);
+            })
+            .finally(() => {
+                // Reset button state
+                submitButton.disabled = false;
+                submitButton.classList.remove('loading');
+            });
+        });
+
+        // Run on page load
+        window.addEventListener('load', function() {
+            initializeStatusTracker();
+            checkPaymentConfirmation();
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    document.querySelector('.nav-menu').classList.remove('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
